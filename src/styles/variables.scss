@@ -1,0 +1,126 @@
+// ================================
+// 🧠 StatusQuest SCSS Variables
+// ================================
+
+// 🎨 Color Palette
+$color-primary: #2563eb; // blue-600
+$color-secondary: #4f46e5; // indigo-600
+$color-success: #22c55e; // green-500
+$color-warning: #facc15; // yellow-400
+$color-error: #ef4444; // red-500
+$color-info: #0ea5e9; // sky-500
+
+$color-bg: #f9fafb;
+$color-surface: #ffffff;
+$color-text: #111827;
+$color-muted: #6b7280;
+
+$color-border: #e5e7eb;
+$color-dark-bg: #1f2937;
+$color-dark-text: #f3f4f6;
+
+// ================================
+// 📱 Responsive Breakpoints
+// ================================
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-large: 1280px;
+
+@mixin respond-mobile {
+  @media (max-width: #{$breakpoint-mobile}) {
+    @content;
+  }
+}
+
+@mixin respond-tablet {
+  @media (min-width: #{$breakpoint-mobile + 1}) and (max-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin respond-desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// ================================
+// 📏 Spacing
+// ================================
+$spacing-xs: 0.25rem;  // 4px
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 1.5rem;   // 24px
+$spacing-xl: 2rem;     // 32px
+
+// ================================
+// 🔤 Typography
+// ================================
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem;   // 16px
+$font-size-md: 1.125rem; // 18px
+$font-size-lg: 1.25rem;  // 20px
+$font-size-xl: 1.5rem;   // 24px
+$font-size-2xl: 2rem;    // 32px
+
+$font-family-base: 'Inter', sans-serif;
+
+// ================================
+// 🧱 Borders / Radius
+// ================================
+$radius-sm: 0.25rem;
+$radius-md: 0.5rem;
+$radius-lg: 1rem;
+$radius-xl: 1.5rem;
+
+$border-base: 1px solid $color-border;
+
+// ================================
+// 🔺 Z-Index
+// ================================
+$z-tooltip: 10;
+$z-dropdown: 20;
+$z-modal: 30;
+$z-toast: 40;
+$z-overlay: 50;
+
+// ================================
+// 💡 Utility Mixins
+// ================================
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin card-style {
+  background-color: $color-surface;
+  border: $border-base;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+// ===================================
+// Layout Utilities
+// ===================================
+
+// Flex helpers
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

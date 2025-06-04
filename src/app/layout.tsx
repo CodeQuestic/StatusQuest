@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
   title: "StatusQuest",
@@ -14,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

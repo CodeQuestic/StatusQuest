@@ -1,5 +1,166 @@
-* {
+// ===============================
+// 🌍 Global Styles for StatusQuest
+// ===============================
+
+// ✅ Use variables with SCSS module system
+@use "./variables.scss" as *;
+
+// ----------------------------
+// 🧹 Reset & Base Box Model
+// ----------------------------
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+
+// ----------------------------
+// 📏 HTML & Body Defaults
+// ----------------------------
+html {
+  font-size: 100%;
+  font-family: $font-family-base;
+  scroll-behavior: smooth;
+  background-color: $color-bg;
+  color: $color-text;
+
+  @include respond-mobile {
+    font-size: 90%;
+  }
+
+  @include respond-tablet {
+    font-size: 95%;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-color: $color-bg;
+  color: $color-text;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
+}
+
+// ----------------------------
+// 🔗 Link Styling
+// ----------------------------
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ----------------------------
+// 🔘 Buttons (Base Reset)
+// ----------------------------
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: $color-text;
+}
+
+// ----------------------------
+// 🧠 Inputs / Textarea
+// ----------------------------
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: $font-size-base;
+  padding: $spacing-sm;
+  border: $border-base;
+  border-radius: $radius-sm;
+  background-color: $color-surface;
+  color: $color-text;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+}
+
+// ----------------------------
+// 🔁 Utility Classes
+// ----------------------------
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $spacing-md;
+
+  @include respond-mobile {
+    padding: $spacing-sm;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-sm {
+  margin-top: $spacing-sm;
+}
+.mt-md {
+  margin-top: $spacing-md;
+}
+.mt-lg {
+  margin-top: $spacing-lg;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm;
+}
+.mb-md {
+  margin-bottom: $spacing-md;
+}
+.mb-lg {
+  margin-bottom: $spacing-lg;
+}
+
+.px-md {
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+}
+.py-md {
+  padding-top: $spacing-md;
+  padding-bottom: $spacing-md;
+}
+
+.rounded {
+  border-radius: $radius-md;
+}
+
+.card {
+  @include card-style;
+}
+
+// ----------------------------
+// 🛠 Scrollbar (project styled)
+// ----------------------------
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-muted;
+  border-radius: $radius-sm;
+
+  &:hover {
+    background: $color-secondary;
+  }
 }
