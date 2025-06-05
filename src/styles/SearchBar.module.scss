@@ -1,14 +1,28 @@
-.searchInput {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
-  width: 250px;
-  transition: 0.3s ease;
+@use "./variables.scss" as *;
 
-  &:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3);
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 18rem;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: $color-muted;
+
+  &::placeholder {
+    color: $color-muted;
   }
+}
+
+.icon {
+  position: absolute;
+  left: 0.75rem;
+  color: $color-muted;
+  pointer-events: none;
 }

@@ -16,6 +16,7 @@ export interface StatusCodeEntry {
   mock: {
     method: "GET" | "POST" | "PUT" | "DELETE";
     url: string;
+    body?: Record<string, any>;
     response: Record<string, any>;
     status: number;
   };
@@ -71,6 +72,7 @@ export const statusCodeGroups: StatusCodeGroup[] = [
         mock: {
           method: "POST",
           url: "/api/users",
+          body: { name: "Charlie" },
           response: {
             status: 201,
             message: "User created successfully",
@@ -100,6 +102,7 @@ export const statusCodeGroups: StatusCodeGroup[] = [
         mock: {
           method: "POST",
           url: "/api/login",
+          body: { username: "", password: "" },
           response: {
             status: 400,
             error: "Username or password missing.",
@@ -136,13 +139,13 @@ export const statusCodeGroups: StatusCodeGroup[] = [
         category: "Client Error",
         color: "#facc15",
         emoji: "🔍",
-        example: "GET /profile/1234 when the user doesn’t exist.",
+        example: "GET /profile/user1 when the user doesn’t exist.",
         mock: {
           method: "GET",
-          url: "/api/profile/1234",
+          url: "/api/profile/user1",
           response: {
             status: 404,
-            error: "User not found.",
+            error: "User1 not found.",
           },
           status: 404,
         },

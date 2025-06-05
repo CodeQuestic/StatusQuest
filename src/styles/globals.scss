@@ -76,16 +76,20 @@ input,
 textarea,
 select {
   font-family: inherit;
-  font-size: $font-size-base;
+  font-size: $font-size-sm;
   padding: $spacing-sm;
   border: $border-base;
   border-radius: $radius-sm;
   background-color: $color-surface;
-  color: $color-text;
+  color: $color-dark-bg;
 
   &:focus {
     outline: none;
-    border-color: $color-primary;
+    border-color: $color-border;
+  }
+
+  @include respond-mobile {
+    font-size: $font-size-base;
   }
 }
 
@@ -149,7 +153,8 @@ select {
 // 🛠 Scrollbar (project styled)
 // ----------------------------
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 2px;
+  height: 2px;
 }
 
 ::-webkit-scrollbar-track {

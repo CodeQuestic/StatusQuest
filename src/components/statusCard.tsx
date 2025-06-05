@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { StatusCodeEntry } from "@/data/statusCodes";
 import styles from "@/styles/statusCard.module.scss";
 
@@ -6,7 +9,6 @@ interface Props {
   query: string;
 }
 
-// Helper to wrap matched text with <mark>
 const highlightMatch = (text: string, query: string) => {
   if (!query) return text;
   const regex = new RegExp(`(${query})`, "gi");
@@ -28,7 +30,25 @@ export default function StatusCard({ data, query }: Props) {
     tip,
   } = data;
 
-  const responseString = JSON.stringify(mock.response, null, 2);
+  const baseUrl =
+    typeof window !== "undefined"
+      ? `${window.location.protocol}//${window.location.host}`
+      : "";
+
+  const fullUrl = `${baseUrl}${mock.url}`;
+  const [loading, setLoading] = useState(false);
+  const [response, setResponse] = useState<object | null>(null);
+
+  const handleTryNow = () => {
+    setLoading(true);
+    setResponse(null);
+
+    const delay = 400 + Math.floor(Math.random() * 1000);
+    setTimeout(() => {
+      setResponse(mock.response);
+      setLoading(false);
+    }, delay);
+  };
 
   return (
     <div className={styles.card} style={{ borderLeft: `6px solid ${color}` }}>
@@ -52,14 +72,48 @@ export default function StatusCard({ data, query }: Props) {
         <strong>Example:</strong> {highlightMatch(example, query)}
       </div>
 
-      <div className={styles.mock}>
-        <strong>Mock Request:</strong>
-        <div className={styles.codeBlock}>
-          {highlightMatch(
-            `${mock.method} ${mock.url}\nResponse:\n${responseString}`,
-            query
-          )}
+      {mock.method === "POST" && mock.body && (
+        <div className={styles.mock}>
+          <strong>Mock Request Body:</strong>
+          <div className={styles.codeBlock}>
+            {JSON.stringify(mock.body, null, 2)
+              .split("\n")
+              .map((line, i) => (
+                <div key={i}>{highlightMatch(line, query)}</div>
+              ))}
+          </div>
         </div>
+      )}
+
+      <div className={styles.mock}>
+        <strong>Try Mock Request:</strong>
+        <div className={styles.tryNowSection}>
+          <input
+            type="text"
+            value={`${mock.method} ${fullUrl}`}
+            readOnly
+            className={styles.urlInput}
+          />
+          <button
+            onClick={handleTryNow}
+            disabled={loading}
+            className={styles.tryBtn}
+          >
+            {loading ? "Trying..." : "Try Now"}
+          </button>
+        </div>
+
+        {loading && <p className={styles.loader}>Loading response...</p>}
+
+        {response && (
+          <div className={styles.codeBlock}>
+            {JSON.stringify(response, null, 2)
+              .split("\n")
+              .map((line, i) => (
+                <div key={i}>{highlightMatch(line, query)}</div>
+              ))}
+          </div>
+        )}
       </div>
     </div>
   );

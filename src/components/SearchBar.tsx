@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Search } from "lucide-react"; // or any icon library
 import styles from "@/styles/SearchBar.module.scss";
 
 interface Props {
@@ -16,13 +17,19 @@ const SearchBar = ({ onSearch }: Props) => {
   };
 
   return (
-    <input
-      type="text"
-      className={styles.searchInput}
-      placeholder="Search HTTP code or title..."
-      value={query}
-      onChange={handleChange}
-    />
+    <div className={styles.inputWrapper}>
+      <Search className={styles.icon} size={18} />
+      <input
+        id="search"
+        name="search"
+        autoComplete="off"
+        type="text"
+        className={styles.searchInput}
+        placeholder="Search..."
+        value={query}
+        onChange={handleChange}
+      />
+    </div>
   );
 };
 

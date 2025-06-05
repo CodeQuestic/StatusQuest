@@ -86,3 +86,50 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.tryNowSection {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.urlInput {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.tryBtn {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.loader {
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.codeBlock {
+  background: #f9f9f9;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-family: monospace;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
