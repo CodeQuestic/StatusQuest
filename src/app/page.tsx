@@ -18,27 +18,24 @@ export default function Home() {
         <SearchBar onSearch={setQuery} />
       </div>
 
-      {/* Main content */}
       <div className={styles.content}>
-        <h1>HTTP Status Codes</h1>
-
         {query ? (
-          filteredCodes.length === 0 ? (
+          filteredCodes?.length === 0 ? (
             <p>No results found for "{query}"</p>
           ) : (
-            filteredCodes.map((entry) => (
-              <StatusCard key={entry.code} data={entry} query={query} />
+            filteredCodes?.map((entry) => (
+              <StatusCard key={entry?.code} data={entry} query={query} />
             ))
           )
         ) : (
-          statusCodeGroups.map((group) => (
-            <section key={group.series} className={styles.group}>
-              <h2>
-                {group.title} ({group.series})
+          statusCodeGroups?.map((group) => (
+            <section key={group?.series} className={styles.group}>
+              <h2 className={styles.groupTitle}>
+                {group?.title} ({group?.series})
               </h2>
-              <p>{group.description}</p>
-              {group.codes.map((entry) => (
-                <StatusCard key={entry.code} data={entry} query={query} />
+              <p className={styles.groupDescription}>{group?.description}</p>
+              {group?.codes?.map((entry) => (
+                <StatusCard key={entry?.code} data={entry} query={query} />
               ))}
             </section>
           ))

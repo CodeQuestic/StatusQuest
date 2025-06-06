@@ -30,26 +30,20 @@
 }
 
 .content {
-  h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1.5rem;
-    color: $color-error;
+  .group {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $color-border;
   }
-}
 
-.group {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #ddd;
-}
+  .groupTitle {
+    color: $color-error;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
 
-.group h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.group p {
-  margin-bottom: 1rem;
-  color: #666;
+  .groupDescription {
+    margin-bottom: 1rem;
+    color: $color-dark-bg;
+  }
 }
