@@ -76,6 +76,19 @@ export default function StatusCard({ data, query }: Props) {
         <strong>Example:</strong> {highlightMatch(example, query)}
       </div>
 
+      {mock?.headers && (
+        <div className={styles.mock}>
+          <strong>Mock Headers:</strong>
+          <div className={styles.codeBlock}>
+            {JSON.stringify(mock?.headers, null, 2)
+              ?.split("\n")
+              ?.map((line, i) => (
+                <div key={i}>{highlightMatch(line, query)}</div>
+              ))}
+          </div>
+        </div>
+      )}
+
       {mock?.method === "POST" && mock?.body && (
         <div className={styles.mock}>
           <strong>Mock Request Body:</strong>

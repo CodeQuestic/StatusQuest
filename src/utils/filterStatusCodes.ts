@@ -10,6 +10,9 @@ export function filterStatusCodes(
   return groups
     .flatMap((group) => group.codes)
     .filter((entry) => {
+      const headerText = entry.mock.headers
+        ? JSON.stringify(entry.mock.headers).toLowerCase()
+        : "";
       const bodyText = entry.mock.body
         ? JSON.stringify(entry.mock.body).toLowerCase()
         : "";
@@ -25,6 +28,7 @@ export function filterStatusCodes(
         entry.example.toLowerCase().includes(q) ||
         entry.mock.method.toLowerCase().includes(q) ||
         entry.mock.url.toLowerCase().includes(q) ||
+        headerText.includes(q) ||
         bodyText.includes(q) ||
         responseText.includes(q) ||
         entry.tip.toLowerCase().includes(q)
