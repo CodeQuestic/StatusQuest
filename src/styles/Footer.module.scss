@@ -1,66 +1,55 @@
-@use './variables.scss' as *;
+@use "./variables.scss" as *;
 
 .footer {
   background-color: $color-text;
-  border-top: 1px solid $color-border;
   padding: $spacing-lg 0;
   color: $color-text;
   font-size: $font-size-sm;
+  box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 $spacing-md;
     @include flex-column;
-    gap: $spacing-md;
+    gap: $spacing-sm;
+    align-items: center;
 
     @include respond-tablet {
       @include flex-between;
       flex-wrap: wrap;
     }
-  }
-}
 
-.brand {
-  h2 {
-    font-size: $font-size-lg;
-    font-weight: bold;
-    color: $color-primary;
-
-    span {
-      color: $color-secondary;
-    }
-  }
-
-  p {
-    margin-top: 4px;
-    color: $color-muted;
-  }
-}
-
-.links {
-  display: flex;
-  gap: $spacing-md;
-
-  a {
-    text-decoration: none;
-    color: $color-primary;
-
-    &:hover {
+    .logo {
+      font-family: $font-family-logo;
+      font-size: $font-size-lg;
+      font-weight: 800;
       color: $color-warning;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
-  }
 
-  @include respond-mobile {
-    flex-direction: column;
-    gap: $spacing-sm;
-  }
-}
+    .links {
+      @include flex-row;
+      gap: $spacing-md;
 
-.copy {
-  p {
-    margin: 0;
-    color: $color-muted;
-    font-size: $font-size-sm;
+      a {
+        text-decoration: none;
+        color: $color-info;
+      }
+    }
+
+    .copy {
+      p {
+        margin: 0;
+        color: $color-muted;
+        font-size: $font-size-sm;
+      }
+    }
   }
 }

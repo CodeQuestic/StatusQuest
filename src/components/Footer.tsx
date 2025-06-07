@@ -7,23 +7,23 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <div className={styles.brand}>
-          <h2>
-            Status<span>Quest</span>
-          </h2>
-          <p>Master HTTP status codes with ease 🚀</p>
-        </div>
+        <h2 className={styles.logo}><a href="/">StatusQuest</a></h2>
 
         <div className={styles.links}>
-          <Link href="/learn">Docs</Link>
           <Link
-            href="https://github.com/yourrepo"
+            href="https://github.com/CodeQuestic/StatusQuest"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub
+            GitHub Repo
           </Link>
-          <Link href="/feedback">Feedback</Link>
+          <Link
+            href="https://github.com/CodeQuestic"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CodeQuestic
+          </Link>
         </div>
 
         <div className={styles.copy}>
