@@ -3,10 +3,10 @@
 **Visualize. Understand. Debug.**  
 StatusQuest is a fun, interactive, and developer-friendly web app that helps you understand HTTP status codes like never before with real-world examples, mock APIs, and detailed breakdowns.
 
-![GitHub repo size](https://img.shields.io/github/repo-size/CodeQuestic/StatusQuest?color=blue)
-![GitHub last commit](https://img.shields.io/github/last-commit/CodeQuestic/StatusQuest)
-![MIT License](https://img.shields.io/github/license/CodeQuestic/StatusQuest)
-![GitHub stars](https://img.shields.io/github/stars/CodeQuestic/StatusQuest?style=social)
+![GitHub repo size](https://img.shields.io/github/repo-size/codequestic/StatusQuest?color=blue)
+![GitHub last commit](https://img.shields.io/github/last-commit/codequestic/StatusQuest)
+![MIT License](https://img.shields.io/github/license/codequestic/StatusQuest)
+![GitHub stars](https://img.shields.io/github/stars/codequestic/StatusQuest?style=flat)
 
 ---
 
