@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ StatusQuest
 
-## Getting Started
+**Visualize. Understand. Debug.**  
+StatusQuest is a fun, interactive, and developer-friendly web app that helps you understand HTTP status codes like never before with real-world examples, mock APIs, and detailed breakdowns.
 
-First, run the development server:
+![GitHub repo size](https://img.shields.io/github/repo-size/CodeQuestic/StatusQuest?color=blue)
+![GitHub last commit](https://img.shields.io/github/last-commit/CodeQuestic/StatusQuest)
+![MIT License](https://img.shields.io/github/license/CodeQuestic/StatusQuest)
+![GitHub stars](https://img.shields.io/github/stars/CodeQuestic/StatusQuest?style=social)
+
+---
+
+## 📘 Table of Contents
+
+- [🚀 Live Demo](#-live-demo)
+- [🎯 Purpose](#-purpose)
+- [✨ Features](#-features)
+- [🧩 Tech Stack](#-tech-stack)
+- [📦 Installation](#-installation)
+- [🧪 Usage](#-usage)
+- [📚 Status Code Structure](#-status-code-structure)
+- [📜 License](#-license)
+
+---
+
+## 🚀 Live Demo
+
+🌐 [Try StatusQuest Live(Yet to launch)](https://yettolaunch.com)
+
+---
+
+## 🎯 Purpose
+
+HTTP status codes are fundamental to web development, but they’re often overlooked or misunderstood. StatusQuest helps developers **learn faster & debug smarter** with real examples along with mock API behaviour.
+
+---
+
+## ✨ Features
+
+✅ Categorized views for **1xx**, **2xx**, **3xx**, **4xx**, and **5xx** series  
+✅ Interactive mock requests and responses  
+✅ Emojis, tips, examples, and mock payloads  
+✅ Realistic API structure with code and headers  
+✅ Built with scalability and simplicity in mind
+
+---
+
+## 🧩 Tech Stack
+
+| Tech         | Use Case                        |
+|--------------|---------------------------------|
+| `Next.js`    | React-based frontend framework  |
+| `SCSS`       | Styling (modular & global)      |
+| `TypeScript` | Type safety                     |
+| `Vercel`     | Hosting and deployment          |
+
+---
+
+## 📦 Installation
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/CodeQuestic/StatusQuest.git
+
+# 2. Install dependencies
+cd StatusQuest
+npm install
+
+# 3. Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧪 Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+After launching locally, visit `http://localhost:3000`.
 
-## Learn More
+Explore categorized HTTP status codes, click "Try Now" to simulate API calls, and see the request, headers, and responses.
 
-To learn more about Next.js, take a look at the following resources:
+> Ideal for frontend developers, backend engineers, and students.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📚 Status Code Structure
 
-## Deploy on Vercel
+Each status code includes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* **Code** and **Title**
+* **Short Description**
+* **Category** (Informational, Success, Redirection, Client Error, Server Error)
+* **Emoji** to visualize purpose
+* **Real-world Example**
+* **Mock API structure**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  * `method`
+  * `url`
+  * `body` (if any)
+  * `headers` (like Retry-After)
+  * `response`
+  * `status`
+* **Pro Tip** for developers
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
