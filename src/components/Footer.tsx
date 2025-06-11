@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        <h2 className={styles.logo}><a href="/">StatusQuest</a></h2>
+        <h2 className={styles.logo}><Link href="/">StatusQuest</Link></h2>
 
         <div className={styles.links}>
           <Link

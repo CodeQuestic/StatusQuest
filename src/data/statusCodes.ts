@@ -17,8 +17,8 @@ export interface StatusCodeEntry {
     method: "GET" | "POST" | "PUT" | "DELETE";
     url: string;
     headers?: Record<string, string>;
-    body?: Record<string, any>;
-    response: Record<string, any>;
+    body?: Record<string, unknown>;
+    response: Record<string, unknown>;
     status: number;
   };
   tip: string;
