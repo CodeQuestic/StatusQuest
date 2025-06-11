@@ -25,7 +25,7 @@ StatusQuest is a fun, interactive, and developer-friendly web app that helps you
 
 ## 🚀 Live Demo
 
-🌐 [Try StatusQuest Live(Yet to launch)](https://yettolaunch.com)
+🌐 [Try StatusQuest Live](https://statusquest.pages.dev)
 
 ---
 
