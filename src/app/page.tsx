@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { statusCodeGroups } from "@/data/statusCodes";
 import SearchBar from "@/components/SearchBar";
 import { filterStatusCodes } from "@/utils/filterStatusCodes";
@@ -17,7 +16,9 @@ export default function Home() {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.logo}>
-          <Link href='/'>StatusQuest</Link>
+          <button onClick={() => (window.location.href = '/')} style={{all: 'unset', cursor: 'pointer'}}>
+            StatusQuest
+          </button>
         </div>
         <SearchBar onSearch={setQuery} />
       </div>
