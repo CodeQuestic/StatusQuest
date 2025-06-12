@@ -52,7 +52,7 @@ HTTP status codes are fundamental to web development, but they’re often overlo
 | `Next.js`    | React-based frontend framework  |
 | `SCSS`       | Styling (modular & global)      |
 | `TypeScript` | Type safety                     |
-| `Vercel`     | Hosting and deployment          |
+| `Cloud Flare Pages`     | Hosting and deployment          |
 
 ---
 
